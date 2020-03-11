@@ -1,0 +1,23 @@
+.card{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    width: 50%;
+    height: 20rem;
+    box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15) !important;
+    padding-top: 3rem;
+}
+.form-group{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 100%;
+}
+input{
+    margin: 0 !important;
+}
+.btn{
+    background-color: #ffd740;
+    width: 10rem;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
