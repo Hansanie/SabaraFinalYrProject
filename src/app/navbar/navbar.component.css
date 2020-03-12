@@ -5,3 +5,9 @@
     padding: 0;
     text-align: start; */
   }
+.navbar-brand{
+  color: #ffd740 !important;
+}
+a{
+  color: white !important;
+}
