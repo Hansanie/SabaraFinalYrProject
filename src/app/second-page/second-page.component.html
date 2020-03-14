@@ -3,15 +3,10 @@
     <div class="card ml-2">
       <div class="card-body">
         <h3 class="header">Excel File</h3>
-        <form>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="inputFile">File</label>
-              <input type="file" #file class="form-control">
-            </div>
-          </div>
-          <button type="submit" class="btn">Submit</button>
-        </form>
+        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+        <button type="button" class="btn" (click)="uploader.uploadAll()">
+          Upload the File
+        </button>
       </div>
     </div>
   </div>

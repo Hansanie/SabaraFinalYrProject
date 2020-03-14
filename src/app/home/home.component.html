@@ -3,15 +3,20 @@
     <div class="card">
       <div class="card-body">
         <h2 class="header">Excel File</h2>
-        <form action="http://localhost:3000/excelSheet/postExcelSheet" method="post" enctype="multipart/form-data">
+        <!-- <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
           <div class="form-row">
             <div class="form-group">
               <label for="inputFile">File</label>
-              <input (change)="fileChange($event)" type="file" #file class="form-control">
+              <input type="file" class="form-control" [(ngModel)]="model.file" name="file"
+              #file="ngModel">
             </div>
           </div>
-          <button type="submit" class="btn" (click)="upload()">Submit</button>
-        </form>
+          <button type="submit" class="btn" >Submit</button>
+        </form>  -->
+        <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+        <button type="button" class="btn" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+          Upload the File
+        </button>
       </div>
     </div>
   </div>

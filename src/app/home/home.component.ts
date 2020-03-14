@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { FileUploader, FileSelectDirective } from 'ng2-file-upload';
+
+const UploadURL = 'http://localhost:3000/excelSheet/postExcelSheet';
 
 @Component({
   selector: 'app-home',
@@ -8,33 +11,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  files: Array < File > ;
-  // files: File;
+  title = 'Upload a File';
 
-    constructor(private http: HttpClient) {
+  public uploader: FileUploader = new FileUploader({ url: UploadURL, itemAlias: 'files' });
 
-    }
-
-    ngOnInit() {
-
-    }
-
-    fileChange(element) {
-      console.log("elemente",element);
-      console.log("el", element.target.files);
-        this.files = element.target.files;
-        console.log("elemente", this.files);
-    }
-
-    upload() {
-        let formData = new FormData();
-        for (var i = 0; i < this.files.length; i++) {
-            formData.append("files[]", this.files[i], this.files[i].name);
-        }
-        this.http.post('http://localhost:3000/excelSheet/postExcelSheet', formData)
-            .subscribe((response) => {
-                console.log('response received is ', response);
-            })
-    }
-
+  ngOnInit() {
+    this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+      console.log('FileUpload:uploaded:', item, status, response);
+      alert('File uploaded successfully');
+    };
+  }
 }

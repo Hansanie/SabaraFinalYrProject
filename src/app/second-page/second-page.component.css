@@ -21,9 +21,9 @@ input{
 }
 .btn{
     background-color: #ffd740;
-    width: 10rem;
-    margin-left: 3rem;
+    width: 60%;
     color: #800080;
+    margin-top: 2rem;
 }
 .row{
     overflow-x: hidden !important;
@@ -32,4 +32,5 @@ input{
 .header{
     text-align: center;
     font-family: 'Lucida Sans' sans-serif;
+    margin-bottom: 2rem;
 }
