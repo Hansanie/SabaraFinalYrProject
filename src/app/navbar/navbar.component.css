@@ -1,9 +1,7 @@
 .navbar {
     background-color: #800080;
     color: #ffffff;
-    /* width: 100%;
-    padding: 0;
-    text-align: start; */
+    margin-bottom: 2rem;
   }
 .navbar-brand{
   color: #ffd740 !important;

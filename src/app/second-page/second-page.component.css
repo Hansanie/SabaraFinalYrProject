@@ -1,14 +1,12 @@
 .card{
     box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15) !important;
 }
-.col-5{
+.col-md-3{
     overflow-x: hidden !important;
-    margin-top: 5%;
     width: 100%;
     padding-right: 0 !important;
 }
-.col-7{
-    margin-top: 5%;
+.col-md-9{
     overflow-x: hidden !important;
 }
 .form-group{
@@ -21,16 +19,43 @@ input{
 }
 .btn{
     background-color: #ffd740;
-    width: 60%;
     color: #800080;
     margin-top: 2rem;
 }
 .row{
     overflow-x: hidden !important;
     margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 .header{
     text-align: center;
     font-family: 'Lucida Sans' sans-serif;
+    margin-bottom: 2rem;
+}
+@media only screen and (min-width: 375px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 1024px) {
+.card.is-invalid{
+    height: 45vh;
+    margin-bottom: 50px;
+}
+.card.is-valid{
+    height: 410px;
+    margin-bottom: 50px;
+}
+.btn.is-valid{
+    margin-top: 3rem !important;
+}
+.header.is-valid{
+    margin-bottom: 3rem !important;
+}
+}
+.title{
+    text-align: center;
     margin-bottom: 2rem;
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FileUploader, FileSelectDirective } from 'ng2-file-upload';
 
 const UploadURL = 'http://localhost:3000/excelSheet/postExcelSheet';

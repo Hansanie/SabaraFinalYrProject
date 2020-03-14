@@ -1,22 +1,55 @@
 <div class="row">
-  <div class="col-5">
-    <div class="card ml-2">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+    <div class="card" [ngClass]="{ 'is-valid': show }">
       <div class="card-body">
-        <h3 class="header">Excel File</h3>
+        <h3 class="header" [ngClass]="{ 'is-valid': show }">Excel File</h3>
+        <label>Add file here</label>
         <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-        <button type="button" class="btn" (click)="uploader.uploadAll()">
-          Upload the File
-        </button>
+        <div class="row">
+          <div class="col-12">
+            <button type="button" class="btn" (click)="uploader.uploadAll()" [ngClass]="{ 'is-valid': show }">
+              Upload the File
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-7">
-    <div class="card mr-1">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
+    <div class="card" [ngClass]="{ 'is-invalid': !show }">
       <div class="card-body">
-        <div class="chart-container" style="position: relative; height:40vh; width:50vw; margin-bottom:3rem;">
+        <div class="chart-container">
           <canvas id="canvas">{{ Linechart }}</canvas>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="row">
+  <div class="col-lg-1 col-xl-1"></div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="title">Predicated Gravity Table</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">Tide</th>
+              <th scope="col">Predicated Gravity</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let d of data">
+            <tr>
+              <td>{{d.time}}</td>
+              <td>{{d.Tide | json}}</td>
+              <td>{{d.predicated_gravity | json}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-1 col-xl-1"></div>
 </div>
